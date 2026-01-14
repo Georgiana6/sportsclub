@@ -63,3 +63,37 @@ If you did *not* have the `Same-Origin Policy`, and therefore did not need CORS:
 4. Without `Same-Origin Policy`, your browser would send that request *with your bank session cookies*. The bank would process the transfer, thinking you authorized it.
 
 **`Same-Origin Policy` blocks this:** The site `evil-hacker.com` cannot read the response from `bank.com` because the origins do not match. **CORS allows you to selectively lower this shield** only for domains you trust, like your own React frontend, while keeping `evil-hacker.com` blocked.
+
+## Exercise
+
+So that students can see the difference between having CORS headers enabled (via the proper configuration of `django-cors-headers`) or not, we will bring up a tiny front-end application that will query the back-end. For that, follow these steps:
+
+1. Clone the repository locally.
+2. Run `docker compose up -d` to build the images and run the contaienrs.
+3. Make sure the environment is running via the `docker ps -a` command.
+4. Make sure the API is returning data by [requesting the list of athletes](http://127.0.0.1:8000/api/v1/people/athletes).
+
+Once we have the environment running, let's follow these steps to perform the actual exercise:
+
+1. Change directory to the project directory.
+2. Run the following command: `python3 -m http.server 3000`. This should bring up an HTTP server on port 3000 using Python.
+3. Using the browser of your choice, load the `cors.html` file in the repository on [the localhost](http://127.0.0.1:3000/cors.html).
+
+This request should load successfully. Tasks to perform:
+
+1. Read [the documentation](https://pypi.org/project/django-cors-headers/#description) of the `django-cors-headers` package.
+2. Check the source code in the repository and figure out why, given than `django-cors-headers` is configured and running, the request was successful.
+3. Modify the values in the `sportsclub/settings.py` configuration file to make sure no origins are allowed in CORS.
+4. For the changes to take effect, bring down the environment using `docker compose` and then bring it up again.
+5. Perform the request again and see it fail.
+
+Now for fine-grained configuration, edit the `settings.py` again to only allow requests from our front-end:
+
+```python
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
+```
+
+Bring down and up the environment again, and perform the request again. It should work.
