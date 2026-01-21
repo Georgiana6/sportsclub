@@ -21,7 +21,7 @@ env:
 
 jobs:
   clamav:
-    name: ClamAV Scan
+    name: ClamAV
     runs-on: ubuntu-latest
 
     steps:
