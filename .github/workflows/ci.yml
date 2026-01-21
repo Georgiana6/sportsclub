@@ -31,13 +31,20 @@ jobs:
       - name: Install ClamAV
         run: |
           sudo apt-get update
-          sudo apt-get install -y clamav clamav-freshclam
+          sudo apt-get install -y clamav
+
+      - name: Prepare ClamAV directories
+        run: |
+          sudo mkdir -p /tmp/clamav
+          sudo chown -R $USER:$USER /tmp/clamav
 
       - name: Update ClamAV signatures
-        run: sudo freshclam
+        run: |
+          freshclam --datadir=/tmp/clamav --log=/tmp/clamav/freshclam.log
 
       - name: Run ClamAV scan
-        run: clamscan -r --infected --no-summary .
+        run: |
+          clamscan -r --infected --no-summary --database=/tmp/clamav .
 
   pip-audit:
     name: pip-audit
@@ -58,7 +65,8 @@ jobs:
           pip install pip-audit
 
       - name: Run pip-audit
-        run: pip-audit -r requirements.txt
+        run: |
+          pip-audit -r requirements.txt
 
   lint:
     name: Lint
