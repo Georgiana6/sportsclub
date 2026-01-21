@@ -22,6 +22,7 @@ env:
 jobs:
   pip-audit:
     name: pip-audit
+    runs-on: ubuntu-latest
     steps:
       - uses: pypa/gh-action-pip-audit@v1.0.0
         with:
