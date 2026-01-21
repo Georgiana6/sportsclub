@@ -1,5 +1,5 @@
 # Sports club
-# hola
+# holaquetal
 This project is a web application that mimics, at very small scale, an athletics club for kids, to be used by students to learn:
 
 1. How to securely deploy web applications into production environments using a CI/CD pipeline.
