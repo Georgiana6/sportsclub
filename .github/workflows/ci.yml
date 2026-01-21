@@ -24,9 +24,15 @@ jobs:
     name: pip-audit
     runs-on: ubuntu-latest
     steps:
-      - uses: pypa/gh-action-pip-audit@v1.0.0
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run pip-audit
+        uses: pypa/gh-action-pip-audit@v1.0.0
         with:
-          inputs: requirements.txt
+          input: requirements.txt
+
+
   lint:
     name: Lint
     runs-on: ubuntu-latest
