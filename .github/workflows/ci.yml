@@ -20,6 +20,27 @@ env:
   POSTGRES_PORT: 5432
 
 jobs:
+clamav:
+  name: ClamAV Scan
+  runs-on: ubuntu-latest
+
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install ClamAV
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y clamav clamav-freshclam
+
+    - name: Update ClamAV signatures
+      run: |
+        sudo freshclam
+
+    - name: Run ClamAV scan
+      run: |
+        clamscan -r --infected --no-summary .
+
   pip-audit:
     name: pip-audit
     runs-on: ubuntu-latest
