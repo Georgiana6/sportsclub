@@ -239,19 +239,3 @@ En relación a su comunidad hay que decir que es muy activa, mantenido por Mend.
 
 #### Por qué no lo elegí para instalar
 Renovate es una herramienta muy potente para automatizar actualizaciones de dependencias, pero no fue seleccionada porque su objetivo principal no es analizar vulnerabilidades, sino mantener versiones al día. Además no es tan paractica y facil de usar en comparación a la primera herramienta explicada.
-
-## Enlaces
-Fork del repositorio:  
-https://github.com/Georgiana6/sportsclub
-
-requirements.txt  mejorado:  
-https://github.com/Georgiana6/sportsclub/blob/main/requirements.txt
-
-requirements.md:  
-https://github.com/Georgiana6/sportsclub/blob/main/requirements.md
-
-dependencies.md:  
-https://github.com/Georgiana6/sportsclub/blob/main/dependencies.md
-
-Workflow CI/CD modificado:  
-https://github.com/Georgiana6/sportsclub/blob/main/.github/workflows/ci.yml
