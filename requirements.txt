@@ -34,9 +34,9 @@ django-json-widget==2.1.1 \
     --hash=sha256:2fa3d6fb6dba9436a29ad2cee23fa794381f54a6678ec7d74e990ae081d9800b \
     --hash=sha256:dc8102e2fa9accd0f661ea1988c9389f8fbbcb8a4bb9cbfb8fa0525b3c1265c1
     # via -r requirements.in
-django-nanoid-field==0.1.4 \
-    --hash=sha256:1c55d8c308d609dfe62ac9e4a1482eb9f7642997852a920b827748e660577b6e \
-    --hash=sha256:df453208733c29f4af295f4fdd74ccc18d3203e4ac2cb0267ef0ba93f09140c2
+django-nanoid-field==0.1.5 \
+    --hash=sha256:c83269ae24d06e3099bedbc180fa8517b310e10727ba5a3d844d99daf2e5df2f \
+    --hash=sha256:dd52887676d7fd1a0ec9e3510d8871235fec7cc28f0b3dcb5bd37ab2efa09fdd
     # via -r requirements.in
 django-ninja==1.5.3 \
     --hash=sha256:0a6ead5b4e57ec1050b584eb6f36f105f256b8f4ac70d12e774d8b6dd91e2198 \
@@ -276,12 +276,6 @@ typing-inspection==0.4.2 \
     --hash=sha256:4ed1cacbdc298c220f1bd249ed5287caa16f34d44ef4e9c3d0cbad5b521545e7 \
     --hash=sha256:ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464
     # via pydantic
-tzdata==2025.3 \
-    --hash=sha256:06a47e5700f3081aab02b2e513160914ff0694bce9947d6b76ebd6bf57cfc5d1 \
-    --hash=sha256:de39c2ca5dc7b0344f2eba86f49d614019d29f060fc4ebc8a417896a620b56a7
-    # via
-    #   django
-    #   psycopg
 whitenoise==6.11.0 \
     --hash=sha256:0f5bfce6061ae6611cd9396a8231e088722e4fc67bc13a111be74c738d99375f \
     --hash=sha256:b2aeb45950597236f53b5342b3121c5de69c8da0109362aee506ce88e022d258
