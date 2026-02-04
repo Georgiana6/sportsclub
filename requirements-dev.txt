@@ -14,9 +14,9 @@ asgiref==3.11.1 \
     # via
     #   django
     #   django-cors-headers
-django==6.0 \
-    --hash=sha256:1cc2c7344303bbfb7ba5070487c17f7fc0b7174bbb0a38cebf03c675f5f19b6d \
-    --hash=sha256:7b0c1f50c0759bbe6331c6a39c89ae022a84672674aeda908784617ef47d8e26
+django==6.0.2 \
+    --hash=sha256:3046a53b0e40d4b676c3b774c73411d7184ae2745fe8ce5e45c0f33d3ddb71a7 \
+    --hash=sha256:610dd3b13d15ec3f1e1d257caedd751db8033c5ad8ea0e2d1219a8acf446ecc6
     # via
     #   -r requirements.in
     #   django-cors-headers
@@ -66,9 +66,9 @@ nanoid==2.0.0 \
     # via
     #   -r requirements.in
     #   django-nanoid-field
-psycopg==3.3.1 \
-    --hash=sha256:ccfa30b75874eef809c0fbbb176554a2640cc1735a612accc2e2396a92442fc6 \
-    --hash=sha256:e44d8eae209752efe46318f36dd0fdf5863e928009338d736843bb1084f6435c
+psycopg==3.3.2 \
+    --hash=sha256:3e94bc5f4690247d734599af56e51bae8e0db8e4311ea413f801fef82b14a99b \
+    --hash=sha256:707a67975ee214d200511177a6a80e56e654754c9afca06a7194ea6bbfde9ca7
     # via -r requirements.in
 psycopg-binary==3.3.1 \
     --hash=sha256:0d8340c59fa1aec1ad121b082443e4871d62c58b958cc089986860fd2d965c73 \
