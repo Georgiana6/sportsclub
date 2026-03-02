@@ -1,0 +1,17 @@
+services:
+  nginx:
+    restart: unless-stopped
+    ports:
+      - "80:80"
+
+  app-blue:
+    restart: unless-stopped
+    ports: []
+
+  app-green:
+    restart: unless-stopped
+    ports: []
+
+  postgres:
+    restart: unless-stopped
+    ports: []

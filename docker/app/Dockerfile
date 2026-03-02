@@ -2,6 +2,9 @@
 FROM python:3.13-slim-trixie
 EXPOSE 8080
 
+# Crear Usuario no root
+RUN useradd -m userclub
+
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
@@ -24,6 +27,12 @@ COPY sportsclub/ .
 
 # Collect static files (needed when serving through a reverse proxy)
 RUN python manage.py collectstatic --noinput
+
+# Cambiar permisos del directorio 
+RUN chown -R userclub:userclub /app
+
+# Run as non-root user
+USER userclub
 
 # Run uvicorn
 CMD ["uvicorn", "sportsclub.asgi:application", "--host", "0.0.0.0", "--port", "8080"]
